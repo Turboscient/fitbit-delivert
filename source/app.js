@@ -4,7 +4,7 @@ import { me } from "appbit";
 import { peerSocket } from "messaging";
 import { encode, decode } from "cbor";
 
-// Clockface should continue indefinitely
+/* // Clockface should continue indefinitely
 me.appTimeoutEnabled = false;
 
 // Store the file queue before app fully unloads
@@ -207,5 +207,9 @@ const delivert = {
     send: transmissionManager,
     options: setConfig
 };
+
+export default delivert; */
+
+const delivert = {};
 
 export default delivert;
