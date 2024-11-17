@@ -4,7 +4,7 @@ import { me } from "appbit";
 import { peerSocket } from "messaging";
 import { encode, decode } from "cbor";
 
-/* // Clockface should continue indefinitely
+// Clockface should continue indefinitely
 me.appTimeoutEnabled = false;
 
 // Store the file queue before app fully unloads
@@ -15,7 +15,7 @@ me.onunload = writeFileQueue;
 const filesInTransit = [undefined, undefined, undefined, undefined, undefined, undefined]
 
 // Get the file queue when app loads
-let queue = getFileQueue();
+let queue = getFileQueue(); 
 
 // Default delivert configuration options on the watch
 let config = {
@@ -200,16 +200,12 @@ function transmissionManager(data) {
 
 let autoResetIntervalID = setInterval(rebootWatchFace, 60000*config.AUTO_RESET_MINUTES);
 let batchIntervalID = setInterval(loadDelivertWatchPayloadIntoMemoryIfConnected, config.FILE_TRANSMISSION_FREQUENCY);
-//getConfig();
+getConfig();
 //deleteAllDelivertCompanionFilesStoredOnWatch();
 
 const delivert = {
     send: transmissionManager,
     options: setConfig
 };
-
-export default delivert; */
-
-const delivert = {};
 
 export default delivert;
