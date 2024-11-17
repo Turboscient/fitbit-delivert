@@ -12,7 +12,7 @@ me.onunload = writeFileQueue;
 
 // Experimentially determined limit of 6 before files won't queue
 // Note: technically has edge cases where it does not act as a queue
-let filesInTransit = [undefined, undefined, undefined, undefined, undefined, undefined]
+const filesInTransit = [undefined, undefined, undefined, undefined, undefined, undefined]
 
 // Get the file queue when app loads
 let queue = getFileQueue();
@@ -148,16 +148,16 @@ function sendDataToCompanion(buffer) {
     // Delete unusable file transfer objects in queue
     filesInTransit.forEach((ft, idx) => {
         if (ft && (
-               ft.readyState == "cancelled" 
-            || ft.readyState == "transferred" 
-            || ft.readyState == "error"
+               ft.readyState === "cancelled" 
+            || ft.readyState === "transferred" 
+            || ft.readyState === "error"
         )) { filesInTransit[idx] = undefined; }
     });
 
     // Find the first free array element to store the file transfer object
     let firstEmptyArrElemIdx = filesInTransit.indexOf(undefined);
     // Cancel all transfers if max files queued, determined by no empty array space
-    if (firstEmptyArrElemIdx == -1) {
+    if (firstEmptyArrElemIdx === -1) {
         // Cancel existing file transfers
         filesInTransit.forEach(ft => ft && ft.readyState && ft.cancel());
         // All arr elements are made undefined
@@ -203,7 +203,9 @@ let batchIntervalID = setInterval(loadDelivertWatchPayloadIntoMemoryIfConnected,
 getConfig();
 deleteAllDelivertCompanionFilesStoredOnWatch();
 
-export default delivert = {
+const delivert = {
     send: transmissionManager,
     options: setConfig
 };
+
+export default delivert;
