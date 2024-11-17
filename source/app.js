@@ -203,7 +203,7 @@ let batchIntervalID = setInterval(loadDelivertWatchPayloadIntoMemoryIfConnected,
 getConfig();
 deleteAllDelivertCompanionFilesStoredOnWatch();
 
-export const delivert = {
+export default delivert = {
     send: transmissionManager,
     options: setConfig
 };

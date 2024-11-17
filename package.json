@@ -1,6 +1,6 @@
 {
   "name": "fitbit-delivert",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Flexible data transfer management for Fitbit OS",
   "license": "MIT",
   "author": "Steven Gonder <gondes1@mcmaster.ca>",
@@ -15,5 +15,9 @@
     "fitbit",
     "fitbitdev"
   ],
+  "exports": {
+	 "./app": "./source/app.js",
+     "./companion": "./source/companion.js"	 
+  },
   "homepage": "https://github.com/Turboscient/fitbit-delivert"
 }

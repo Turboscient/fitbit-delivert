@@ -103,7 +103,7 @@ function sendDataToWatch(data) {
     });     
   };
 
-export const delivert = {
+export default delivert = {
     send: sendDataToWatch,
     options: setConfig
 };
