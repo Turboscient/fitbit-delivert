@@ -70,7 +70,7 @@ function getConfig() {
     config = decode(readFileSync("delivert_config", "cbor"));
     clearInterval(batchIntervalID);
     clearInterval(autoResetIntervalID);
-    batchIntervalID = setInterval(loadPayloadIntoMemoryIfConnected, config.FILE_TRANSMISSION_FREQUENCY);
+    batchIntervalID = setInterval(loadDelivertWatchPayloadIntoMemoryIfConnected, config.FILE_TRANSMISSION_FREQUENCY);
     autoResetIntervalID = setInterval(rebootWatchFace, 60000*config.AUTO_RESET_MINUTES);
 };
 
