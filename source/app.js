@@ -200,8 +200,8 @@ function transmissionManager(data) {
 
 let autoResetIntervalID = setInterval(rebootWatchFace, 60000*config.AUTO_RESET_MINUTES);
 let batchIntervalID = setInterval(loadDelivertWatchPayloadIntoMemoryIfConnected, config.FILE_TRANSMISSION_FREQUENCY);
-getConfig();
-deleteAllDelivertCompanionFilesStoredOnWatch();
+//getConfig();
+//deleteAllDelivertCompanionFilesStoredOnWatch();
 
 const delivert = {
     send: transmissionManager,
