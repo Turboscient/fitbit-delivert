@@ -3,6 +3,10 @@ Fitbit Delivert is an attempt to make Fitbit OS watch-to-companion and companion
 
 Fitbit Delivert does not guarantee that a file will be transmitted or that it will arrive on the companion app in the order it was sent in. However, file transmission order should *almost always* be correct with the default file transmission frequency. This package currently prioritizes throughput and utilizes certain hacky approaches to attempt to keep the connection open. There is uncertainty around these approaches but with limited support from Fitbit themselves I am forced to make guesses and assumptions. The single greatest challenge with Fitbit is transferring data without running into syncing or connection ("clogging") issues, and this package is unlikely to fully resolve that as it's largely beyond my control. However, any improvement is some improvement.  
 
+Fitbit Delivert wraps the File-Transfer API and is designed to work with existing implementations, mostly. Delivert will destroy files if they sit in the outbox queue in a way that blocks it. You should implement a file transfer approach similar to the example unless you're intimately familiar with Delivert.
+
+NOTE: Delivert does not utilize file storage on the companion yet (due to lack of time) so the sophicated payload management on the watch will not be there. There are no retries for companion-to-watch beyond what the File-Transfer API provides.
+
 ## :warning: Warning :warning:
 
 You cannot use this package directly through NPM. You will get an error:
