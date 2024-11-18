@@ -1,6 +1,6 @@
 {
   "name": "fitbit-delivert",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Flexible data transfer management for Fitbit OS",
   "license": "MIT",
   "author": "Steven Gonder <gondes1@mcmaster.ca>",
