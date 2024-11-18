@@ -50,7 +50,8 @@ function wakeUp() {
   try {
     peerSocket.send("ping");
   } catch {
-    console.log("peer not open");
+    // Nothing should happen here since the socket shouldn't be open but if there's any chance
+    // of forcing the socket open it's worth a try
   }
 }; 
 
